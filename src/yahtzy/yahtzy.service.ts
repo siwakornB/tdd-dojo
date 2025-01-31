@@ -3,9 +3,36 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class YahtzyService {
     sumDiceByTarget(dice: number[], target: number) {
+        if (target > 6 || target < 1) {
+            throw Error('Target must be between 1-6');
+        }
+
+        // dice.forEach((item) => {
+        //     if (item > 6) throw Error('Dice must be between 1-6');
+        //     if (item < 1) throw Error('Dice must be between 1-6');
+        // });
+
+        // if (target > 6) {
+        //     throw Error('Target must be between 1-6');
+        // }
+        if (dice.length === 0) {
+            throw Error('Dice must be provided');
+        }
+
+        if (dice.length !== 5) {
+            throw Error('Dice array length must be 5 long');
+        }
+
+        // if (target < 1) {
+        //     throw Error('Target must be between 1-6');
+        // }
+
         let sum = 0;
 
-        dice.map((i) => (i === target ? (sum += target) : null));
+        dice.map((i) => {
+            if (i > 6 || i < 1) throw Error('Dice must be between 1-6');
+            i === target ? (sum += target) : null;
+        });
         return sum;
 
         // if (target === 6) {
