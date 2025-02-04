@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { FizzbuzzService } from './fizzbuzz/fizzbuzz.service';
 import { YahtzyService } from './yahtzyBasic/yahtzyBasic.service';
 import { YahtzyAdvanceService } from './yahtzyChance/yahtzyChance.service';
+import { YahtzyFullhouseService } from './yahtzyFullhouse/yahtzyFullhouse.service';
 
 @Module({
     imports: [],
@@ -13,6 +14,7 @@ import { YahtzyAdvanceService } from './yahtzyChance/yahtzyChance.service';
         FizzbuzzService,
         YahtzyService,
         YahtzyAdvanceService,
+        YahtzyFullhouseService,
     ],
 })
 export class AppModule {}
